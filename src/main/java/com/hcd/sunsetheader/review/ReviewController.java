@@ -10,6 +10,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
@@ -31,6 +32,7 @@ public class ReviewController {
 	private final ReviewModelAssembler assembler;
 	private final ApplicationEventPublisher eventPublisher;
 	
+	@Autowired
 	public ReviewController(ReviewService service, 
 			ReviewModelAssembler assembler,
 			ApplicationEventPublisher eventPublisher) {
@@ -40,9 +42,9 @@ public class ReviewController {
 	}
 
 	@DeprecatedResource(since = "01 Jan 2021 00:00:00 GMT", 
-				   alternate = "/reviews/search?filter=pattern",
-				   policy = "https://technically-correct.eu/deprecation-policy",
-				   sunset = "31 Dec 2021 23:59:59 GMT")
+			alternate = "/reviews/search?filter=pattern",
+			policy = "https://technically-correct.eu/deprecation-policy",
+			sunset = "31 Dec 2021 23:59:59 GMT")
 	@GetMapping("/reviews")
 	public ResponseEntity<?> all(HttpServletResponse response) {
 		final List<Review> reviews = service.findAll();

@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationEvent;
 
+import lombok.Getter;
+
+@Getter
 public class DeprecatedResourceEvent extends ApplicationEvent {
 	
 	private static final long serialVersionUID = 1L;
@@ -28,29 +31,5 @@ public class DeprecatedResourceEvent extends ApplicationEvent {
 		this.alternate = alternate;
 		this.policy = policy;
 		this.sunset = sunset;
-	}
-		
-	public HttpServletRequest getRequest() {
-		return request;
-	}
-	
-	public HttpServletResponse getResponse() {
-		return response;
-	}
-	
-	public String getSince() {
-		return since;
-	}
-	
-	public String getAlternate() {
-		return alternate;
-	}
-	
-	public String getPolicy() {
-		return policy;
-	}
-	
-	public String getSunset() {
-		return sunset;
 	}
 }

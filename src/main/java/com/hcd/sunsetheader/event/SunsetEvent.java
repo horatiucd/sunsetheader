@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationEvent;
 
+import lombok.Getter;
+
+@Getter
 public class SunsetEvent extends ApplicationEvent {
 	
 	private static final long serialVersionUID = 1L;
@@ -21,12 +24,4 @@ public class SunsetEvent extends ApplicationEvent {
 		this.response = response;
 		this.value = value;
 	}
-
-	public HttpServletResponse getResponse() {
-		return response;
-	}
-
-	public Optional<LocalDateTime> getValue() {
-		return value;
-	}		
 }
