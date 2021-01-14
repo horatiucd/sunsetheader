@@ -39,10 +39,10 @@ public class ReviewController {
 		this.assembler = assembler;
 	}
 
-	@DeprecatedResource(since = "11 Nov 2018 23:59:59 GMT", 
+	@DeprecatedResource(since = "01 Jan 2021 00:00:00 GMT", 
 				   alternate = "/reviews/search?filter=pattern",
 				   policy = "https://technically-correct.eu/deprecation-policy",
-				   sunset = "13 Jan 2021 21:39:19 GMT")
+				   sunset = "31 Dec 2021 23:59:59 GMT")
 	@GetMapping("/reviews")
 	public ResponseEntity<?> all(HttpServletResponse response) {
 		final List<Review> reviews = service.findAll();
