@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.hcd.sunsetheader.event.SunsetEvent;
 import com.hcd.sunsetheader.exception.EntityNotFoundException;
-import com.hcd.sunsetheader.interceptor.DeprecatedApi;
+import com.hcd.sunsetheader.interceptor.DeprecatedResource;
 
 @RestController
 public class ReviewController {
@@ -39,7 +39,7 @@ public class ReviewController {
 		this.assembler = assembler;
 	}
 
-	@DeprecatedApi(since = "Sun, 11 Nov 2018 23:59:59 GMT", 
+	@DeprecatedResource(since = "11 Nov 2018 23:59:59 GMT", 
 				   alternate = "/reviews/search?filter=pattern",
 				   policy = "https://technically-correct.eu/deprecation-policy",
 				   sunset = "13 Jan 2021 21:39:19 GMT")

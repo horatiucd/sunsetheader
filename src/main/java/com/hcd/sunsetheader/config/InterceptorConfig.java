@@ -5,13 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.hcd.sunsetheader.interceptor.DeprecatedApiInterceptor;
+import com.hcd.sunsetheader.interceptor.DeprecatedResourceInterceptor;
 
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 
 	@Autowired
-	private DeprecatedApiInterceptor interceptor;
+	private DeprecatedResourceInterceptor interceptor;
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
