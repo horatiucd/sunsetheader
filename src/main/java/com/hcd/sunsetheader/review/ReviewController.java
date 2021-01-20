@@ -64,8 +64,8 @@ public class ReviewController {
 		try {
 			Review review = service.findOne(id);
 			
-			eventPublisher.publishEvent(new SunsetEvent(this, response, 
-					((Sunsetable) review).sunsetDate()));
+			eventPublisher.publishEvent(new SunsetEvent(this, 
+					response, review.sunsetDate()));
 			
 			return ResponseEntity.ok(assembler.toModel(review));
 		} catch (EntityNotFoundException e) {
