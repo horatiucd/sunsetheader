@@ -92,7 +92,7 @@ public class ReviewController {
 	}
 	
 	@GetMapping("/reviews/search")
-	public ResponseEntity<?> search(@RequestParam(name = "filter", required = true) String filter) {					
+	public ResponseEntity<?> search(@RequestParam(name = "filter") String filter) {
 	    final List<Review> reviews = service.search(filter);
 	    
 	    List<EntityModel<Review>> content = reviews.stream()

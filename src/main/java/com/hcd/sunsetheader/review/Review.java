@@ -45,6 +45,6 @@ public class Review implements Sunsetable {
 	}
 	
 	public enum Status {
-		DRAFT, OPEN, CLOSED, CANCELLED;
+		DRAFT, OPEN, CLOSED, CANCELLED
 	}
 }

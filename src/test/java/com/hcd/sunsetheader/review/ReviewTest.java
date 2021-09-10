@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.hcd.sunsetheader.review.Review.Status;
 
-public class ReviewTest {
+class ReviewTest {
 
 	private Review review;
 	
@@ -19,7 +19,7 @@ public class ReviewTest {
 	}
 	
 	@Test
-	public void sunsetDate_Draft() {
+	void sunsetDate_Draft() {
 		LocalDateTime dateCreated = LocalDateTime.now();
 		review.setStatus(Status.DRAFT);
 		review.setDateCreated(dateCreated);
@@ -30,7 +30,7 @@ public class ReviewTest {
 	}
 	
 	@Test
-	public void sunsetDate_Cancelled() {
+	void sunsetDate_Cancelled() {
 		LocalDateTime dateCancelled = LocalDateTime.now();
 		review.setStatus(Status.CANCELLED);
 		review.setDateCancelled(dateCancelled);
@@ -41,7 +41,7 @@ public class ReviewTest {
 	}
 	
 	@Test
-	public void sunsetDate_NotPresent() {		
+	void sunsetDate_NotPresent() {
 		Assertions.assertTrue(review.sunsetDate().isEmpty());
 		
 		review.setStatus(Status.OPEN);
