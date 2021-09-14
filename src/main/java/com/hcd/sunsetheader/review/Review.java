@@ -1,14 +1,13 @@
 package com.hcd.sunsetheader.review;
 
-import java.time.LocalDateTime;
-import java.util.Optional;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Data
 @NoArgsConstructor

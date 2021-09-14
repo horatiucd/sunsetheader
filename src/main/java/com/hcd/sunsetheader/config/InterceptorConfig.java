@@ -10,8 +10,12 @@ import com.hcd.sunsetheader.interceptor.DeprecatedResourceInterceptor;
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
 
-	@Autowired
 	private DeprecatedResourceInterceptor interceptor;
+
+	@Autowired
+	public void setInterceptor(DeprecatedResourceInterceptor interceptor) {
+		this.interceptor = interceptor;
+	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

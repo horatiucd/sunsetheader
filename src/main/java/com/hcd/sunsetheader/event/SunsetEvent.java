@@ -1,13 +1,10 @@
 package com.hcd.sunsetheader.event;
 
-import java.time.LocalDateTime;
-import java.util.Optional;
-
-import javax.servlet.http.HttpServletResponse;
-
+import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
-import lombok.Getter;
+import javax.servlet.http.HttpServletResponse;
+import java.time.LocalDateTime;
 
 @Getter
 public class SunsetEvent extends ApplicationEvent {
@@ -16,10 +13,10 @@ public class SunsetEvent extends ApplicationEvent {
 	
 	private final HttpServletResponse response;
 	
-	private final Optional<LocalDateTime> value;
+	private final LocalDateTime value;
 
 	public SunsetEvent(Object source,
-			HttpServletResponse response, Optional<LocalDateTime> value) {
+			HttpServletResponse response, LocalDateTime value) {
 		super(source);
 		this.response = response;
 		this.value = value;

@@ -65,7 +65,7 @@ public class ReviewController {
 			Review review = service.findOne(id);
 			
 			eventPublisher.publishEvent(new SunsetEvent(this, 
-					response, review.sunsetDate()));
+					response, review.sunsetDate().orElse(null)));
 			
 			return ResponseEntity.ok(assembler.toModel(review));
 		} catch (EntityNotFoundException e) {
@@ -74,7 +74,7 @@ public class ReviewController {
 	}
 			
 	@PutMapping("/reviews/{id}/open")
-	public ResponseEntity<?> open(@PathVariable Long id) {		
+	public ResponseEntity<?> open(@PathVariable Long id) {
 		final Review review = service.open(id);
 		return ok(assembler.toModel(review));		
 	}
