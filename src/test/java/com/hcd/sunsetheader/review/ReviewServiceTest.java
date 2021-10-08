@@ -211,12 +211,11 @@ class ReviewServiceTest {
         List<Review> result = reviewService.search(filter);
         Assertions.assertEquals(expected, result);
 
-        ArgumentCaptor<Example> exampleCaptor = ArgumentCaptor.forClass(Example.class);
+        ArgumentCaptor<Example<Review>> exampleCaptor = ArgumentCaptor.forClass(Example.class);
         verify(mockRepository).findAll(exampleCaptor.capture());
-        final Example example = exampleCaptor.getValue();
+        final Example<Review> example = exampleCaptor.getValue();
 
-        Assertions.assertTrue(example.getProbe() instanceof Review);
-        Assertions.assertEquals(filter, ((Review) example.getProbe()).getDescription());
+        Assertions.assertEquals(filter, example.getProbe().getDescription());
 
         final ExampleMatcher matcher = example.getMatcher();
         Assertions.assertEquals(ExampleMatcher.MatchMode.ANY, matcher.getMatchMode());
